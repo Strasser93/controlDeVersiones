@@ -1,5 +1,6 @@
-package main;
+package ventanas;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -12,33 +13,20 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import jugador.Jugador;
+import juego.Jugador;
 
-public class Principal extends JFrame{
-	// Variables
+public class VentanaInicio extends JFrame {
+
 	private JPanel contentPane;
+
 	private JTextField caja1;
 	private JTextField caja2;
 	private JTextField caja3;
 	private JTextField caja4;
 
-	// Punto de entrada de nuestra aplicación
-	public static void main(String[] args) {
+	//Crear la ventana de inicio
+	public VentanaInicio() {
 
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Principal frame = new Principal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	// Constructor
-
-	public Principal() {
 
 		// Propiedades de ventana
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -109,6 +97,6 @@ public class Principal extends JFrame{
 		});
 		boton1.setBounds(10, 154, 383, 23);
 		contentPane.add(boton1);
-
 	}
+
 }
