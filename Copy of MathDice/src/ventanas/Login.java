@@ -24,7 +24,8 @@ import java.awt.event.ActionEvent;
 public class Login extends JPanel {
 
 	//Atributos
-	private JPanel contentPane;
+	
+//	private JPanel contentPane;
 	private ImageIcon[] dados3=new ImageIcon[3];
 	private ImageIcon[] dados6=new ImageIcon[6];
 	private ImageIcon[] dados12=new ImageIcon[12];
@@ -59,16 +60,17 @@ public class Login extends JPanel {
 	public Login(Jugador j) {
 		
 		setBounds(100, 100, 850, 700);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setLayout(null);
+//		contentPane = new JPanel();
+//		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
-		contentPane.setLayout(null);
+//		contentPane.setLayout(null);
 		
 		//Label1 - Que contiene una concatenacion de String formado por la cadena ".." 
 		//+ la propiedad nombre del jugador (que le estamos pasando por parametros)
 		JLabel label1 = new JLabel("Bienvenido jugador "+j.getNombre());
-		label1.setBounds(435, 11, 233, 14);
-		contentPane.add(label1);
+		label1.setBounds(57, 84, 150, 14);
+		add(label1);
 		
 	
 		//Cargamos las imagenes en los arrays
@@ -108,54 +110,54 @@ public class Login extends JPanel {
 		dado1 = new JLabel();
 		//SetIcon llama a la posicion valordado1 del array dados3 y cuando lo llama lo transforma en icono
 		dado1.setIcon(dados3[valordado1]);
-		dado1.setBounds(10, 11, 150, 150);
+		dado1.setBounds(91, 144, 101, 68);
 		dado1.setText(String.valueOf(valordado1)); //metemos el valor del dado en el objeto tipo dado para recogerlo en la clase inerclass
-		contentPane.add(dado1);
+		add(dado1);
 		
 		dado1.addMouseListener(new ListenerDados());
 		
 		dado2 = new JLabel();
 		dado2.setIcon(dados3[valordado2]);
 		dado2.setText(String.valueOf(valordado2));
-		dado2.setBounds(205, 11, 150, 150);
-		contentPane.add(dado2);
+		dado2.setBounds(237, 144, 86, 68);
+		add(dado2);
 		
 		dado2.addMouseListener(new ListenerDados());
 		
 		dado3 = new JLabel();
 		dado3.setIcon(dados6[valordado3]);
 		dado3.setText(String.valueOf(valordado3));
-		dado3.setBounds(10, 200, 150, 150);
-		contentPane.add(dado3);
+		dado3.setBounds(87, 295, 55, 14);
+		add(dado3);
 		
 		dado3.addMouseListener(new ListenerDados());
 		
 		dado4 = new JLabel();
 		dado4.setIcon(dados6[valordado4]);
 		dado4.setText(String.valueOf(valordado4));
-		dado4.setBounds(205, 200, 150, 150);
-		contentPane.add(dado4);
+		dado4.setBounds(214, 282, 55, 14);
+		add(dado4);
 		
 		dado4.addMouseListener(new ListenerDados());
 		
 		dado5 = new JLabel();
 		dado5.setIcon(dados6[valordado5]);
 		dado5.setText(String.valueOf(valordado5));
-		dado5.setBounds(410, 200, 150, 150);
-		contentPane.add(dado5);
+		dado5.setBounds(411, 307, 55, 14);
+		add(dado5);
 		
 		dado5.addMouseListener(new ListenerDados());
 		
 		dado6 = new JLabel();
 		dado6.setIcon(dados12[valordado6]);
-		dado6.setBounds(10, 375, 150, 150);
-		contentPane.add(dado6);
+		dado6.setBounds(411, 443, -164, -116);
+		add(dado6);
 		
 		//Caja que muestra el valor de los dados cuando clickas
 		sumDados = new JTextField();
 		sumDados.setEditable(false);
-		sumDados.setBounds(471, 431, 252, 48);
-		contentPane.add(sumDados);
+		sumDados.setBounds(607, 219, 86, 20);
+		add(sumDados);
 		sumDados.setColumns(10);
 		
 		//Boton de suma
@@ -173,14 +175,14 @@ public class Login extends JPanel {
 				}
 			}
 		});
-		botonMas.setBounds(471, 389, 89, 23);
-		contentPane.add(botonMas);
+		botonMas.setBounds(607, 278, 41, 23);
+		add(botonMas);
 		
 		
 		//Boton de resta
 		botonMenos = new JButton("-");
-		botonMenos.setBounds(634, 389, 89, 23);
-		contentPane.add(botonMenos);
+		botonMenos.setBounds(658, 278, 37, 23);
+		add(botonMenos);
 		
 		
 		botonMenos.addActionListener(new ActionListener() {
@@ -197,8 +199,8 @@ public class Login extends JPanel {
 		
 		//label que muestra el resultado
 				JLabel labelResultado = new JLabel();
-				labelResultado.setBounds(471, 561, 252, 23);
-				contentPane.add(labelResultado);
+				labelResultado.setBounds(696, 16, 0, 0);
+				add(labelResultado);
 		
 		//Boton "MATHDICE"
 		JButton botonMathdice = new JButton("MATHDICE ");
@@ -219,14 +221,14 @@ public class Login extends JPanel {
 				}
 			}
 		});
-		botonMathdice.setBounds(471, 490, 252, 48);
-		contentPane.add(botonMathdice);
+		botonMathdice.setBounds(706, 218, 87, 23);
+		add(botonMathdice);
 		
 		
 		//Jlabel que muestra si has ganado o no
 		resultadoenTexto = new JLabel();
-		resultadoenTexto.setBounds(471, 620, 252, 14);
-		contentPane.add(resultadoenTexto);
+		resultadoenTexto.setBounds(793, 16, 0, 0);
+		add(resultadoenTexto);
 		
 		//ref=this para referenciar la ventana actual
 		ref=this;
@@ -243,8 +245,10 @@ public class Login extends JPanel {
 			}
 		});
 		botonRelanzar.setEnabled(false);
-		botonRelanzar.setBounds(244, 444, 169, 23);
-		contentPane.add(botonRelanzar);
+		botonRelanzar.setBounds(478, 218, 125, 23);
+		add(botonRelanzar);
+		
+		
 		
 	
 	}
