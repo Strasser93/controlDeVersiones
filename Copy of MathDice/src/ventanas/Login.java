@@ -1,6 +1,5 @@
 package ventanas;
 
-import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.event.MouseAdapter;
@@ -69,7 +68,7 @@ public class Login extends JPanel {
 		//Label1 - Que contiene una concatenacion de String formado por la cadena ".." 
 		//+ la propiedad nombre del jugador (que le estamos pasando por parametros)
 		JLabel label1 = new JLabel("Bienvenido jugador "+j.getNombre());
-		label1.setBounds(57, 84, 150, 14);
+		label1.setBounds(534, 79, 150, 14);
 		add(label1);
 		
 	
@@ -110,7 +109,7 @@ public class Login extends JPanel {
 		dado1 = new JLabel();
 		//SetIcon llama a la posicion valordado1 del array dados3 y cuando lo llama lo transforma en icono
 		dado1.setIcon(dados3[valordado1]);
-		dado1.setBounds(91, 144, 101, 68);
+		dado1.setBounds(10, 11, 150, 150);
 		dado1.setText(String.valueOf(valordado1)); //metemos el valor del dado en el objeto tipo dado para recogerlo en la clase inerclass
 		add(dado1);
 		
@@ -119,7 +118,7 @@ public class Login extends JPanel {
 		dado2 = new JLabel();
 		dado2.setIcon(dados3[valordado2]);
 		dado2.setText(String.valueOf(valordado2));
-		dado2.setBounds(237, 144, 86, 68);
+		dado2.setBounds(205, 11, 150, 150);
 		add(dado2);
 		
 		dado2.addMouseListener(new ListenerDados());
@@ -127,7 +126,7 @@ public class Login extends JPanel {
 		dado3 = new JLabel();
 		dado3.setIcon(dados6[valordado3]);
 		dado3.setText(String.valueOf(valordado3));
-		dado3.setBounds(87, 295, 55, 14);
+		dado3.setBounds(10, 200, 150, 150);
 		add(dado3);
 		
 		dado3.addMouseListener(new ListenerDados());
@@ -135,7 +134,7 @@ public class Login extends JPanel {
 		dado4 = new JLabel();
 		dado4.setIcon(dados6[valordado4]);
 		dado4.setText(String.valueOf(valordado4));
-		dado4.setBounds(214, 282, 55, 14);
+		dado4.setBounds(205, 200, 150, 150);
 		add(dado4);
 		
 		dado4.addMouseListener(new ListenerDados());
@@ -143,20 +142,20 @@ public class Login extends JPanel {
 		dado5 = new JLabel();
 		dado5.setIcon(dados6[valordado5]);
 		dado5.setText(String.valueOf(valordado5));
-		dado5.setBounds(411, 307, 55, 14);
+		dado5.setBounds(410, 200, 150, 150);
 		add(dado5);
 		
 		dado5.addMouseListener(new ListenerDados());
 		
 		dado6 = new JLabel();
 		dado6.setIcon(dados12[valordado6]);
-		dado6.setBounds(411, 443, -164, -116);
+		dado6.setBounds(10, 375, 150, 150);
 		add(dado6);
 		
 		//Caja que muestra el valor de los dados cuando clickas
 		sumDados = new JTextField();
 		sumDados.setEditable(false);
-		sumDados.setBounds(607, 219, 86, 20);
+		sumDados.setBounds(471, 431, 252, 48);
 		add(sumDados);
 		sumDados.setColumns(10);
 		
@@ -175,13 +174,13 @@ public class Login extends JPanel {
 				}
 			}
 		});
-		botonMas.setBounds(607, 278, 41, 23);
+		botonMas.setBounds(471, 389, 89, 23);
 		add(botonMas);
 		
 		
 		//Boton de resta
 		botonMenos = new JButton("-");
-		botonMenos.setBounds(658, 278, 37, 23);
+		botonMenos.setBounds(634, 389, 89, 23);
 		add(botonMenos);
 		
 		
@@ -199,7 +198,7 @@ public class Login extends JPanel {
 		
 		//label que muestra el resultado
 				JLabel labelResultado = new JLabel();
-				labelResultado.setBounds(696, 16, 0, 0);
+				labelResultado.setBounds(471, 561, 252, 23);
 				add(labelResultado);
 		
 		//Boton "MATHDICE"
@@ -221,13 +220,13 @@ public class Login extends JPanel {
 				}
 			}
 		});
-		botonMathdice.setBounds(706, 218, 87, 23);
+		botonMathdice.setBounds(471, 490, 252, 48);
 		add(botonMathdice);
 		
 		
 		//Jlabel que muestra si has ganado o no
 		resultadoenTexto = new JLabel();
-		resultadoenTexto.setBounds(793, 16, 0, 0);
+		resultadoenTexto.setBounds(471, 595, 252, 14);
 		add(resultadoenTexto);
 		
 		//ref=this para referenciar la ventana actual
@@ -245,7 +244,7 @@ public class Login extends JPanel {
 			}
 		});
 		botonRelanzar.setEnabled(false);
-		botonRelanzar.setBounds(478, 218, 125, 23);
+		botonRelanzar.setBounds(244, 444, 169, 23);
 		add(botonRelanzar);
 		
 		

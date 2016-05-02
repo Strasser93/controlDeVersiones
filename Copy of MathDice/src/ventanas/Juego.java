@@ -20,7 +20,7 @@ public class Juego extends JFrame {
 
 	
 	private Jugador jugador;
-	private JPanel contentPane;
+	public static JPanel contentPaneJuego;
 	
 	
 	public static final String VENTANA1= "VENTANA 1";
@@ -47,8 +47,8 @@ public class Juego extends JFrame {
 		l = new Login(getPlayer());
 		p = new Perfil(getPlayer());
 		//Las añadimos al cardlayout
-		contentPane.add(l, VENTANA1);
-		contentPane.add(p, VENTANA2);
+		contentPaneJuego.add(l, VENTANA1);
+		contentPaneJuego.add(p, VENTANA2);
 		
 	}
 	
@@ -89,8 +89,8 @@ public class Juego extends JFrame {
 		JMenuItem mntmPerfil = new JMenuItem("Perfil");
 		mntmPerfil.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				CardLayout c1= (CardLayout) (contentPane.getLayout());
-				c1.show(contentPane, VENTANA2);
+				CardLayout c1= (CardLayout) (contentPaneJuego.getLayout());
+				c1.show(contentPaneJuego, VENTANA2);
 			}
 		});
 		menu1.add(mntmPerfil);
@@ -98,17 +98,17 @@ public class Juego extends JFrame {
 		JMenuItem mntmJuego = new JMenuItem("Juego");
 		mntmJuego.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				CardLayout c1= (CardLayout) (contentPane.getLayout());
-				c1.show(contentPane, VENTANA1);
+				CardLayout c1= (CardLayout) (contentPaneJuego.getLayout());
+				c1.show(contentPaneJuego, VENTANA1);
 			}
 		});
 		menu1.add(mntmJuego);
 		
 		
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(new CardLayout(0, 0));
+		contentPaneJuego = new JPanel();
+		contentPaneJuego.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPaneJuego);
+		contentPaneJuego.setLayout(new CardLayout(0, 0));
 		
 		
 		
